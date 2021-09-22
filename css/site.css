@@ -1,0 +1,27 @@
+:root{
+    --primary-color: #1d5888;
+    --secondary-color: #FFEA7A;
+    --dark-color: #292929;
+    --light-gray: #d4d4d4;
+    --dark-gray: #a9a9a9;
+    --white-color: #dfe9f3;
+}
+
+main>.container {
+    padding: 15px 15px 0;
+}
+
+body{
+    color:var(--primary-color);
+}
+
+.nav a{
+    font-size: 1.8em !important;
+}
+.nav li{
+    padding-right:5px;
+}
+
+.invisible{
+    display: none;
+}

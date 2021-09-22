@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Brooks Fine Jewelry - Custom Jewelry Pricing</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link href="/css/site.css" rel="stylesheet">
+      
+     <!-- Font Awesome  -->
+     <script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="/img/brooksfinejewelry_blue_white_logo.png" class="mx-2" alt="Brooks Fine Jewelry Logo" width="40" height="40">Brooks Fine Jewelry
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="nav-item text-dark">
+                        <a class="nav-link" title="Metal Prices" target="_blank" href="https://www.kitco.com/market/">Kitco</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" title="Brooks Fine Jewelry Website" target="_blank" href="https://www.brooksfinejewelry.com/">Visit Website</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="https://specialtycasting.com/">Specialty Casting</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main style="margin-top: 80px;">
+        <div class="container">
+            <div id="config" class="d-flex row row-cols-1 row-cols-md-2">
+                <div class="d-flex col-4 col-md-2">
+                    <div class="justify-content-start">
+                        <button id="btnToggleConfig" title="Show configuration options" type="button" class="btn btn-dark btn-lg" ><i class="fas fa-cog"></i></button>
+                    </div>
+                </div>
+                <div class="col-4 col-md-8">
+                </div>
+                <div class="d-flex col-4 col-md-2 justify-content-end">
+                    <div>
+                        <button id="btnToggleMeleePricing" title="Show melee pricing" type="button" class="btn btn-dark btn-lg" ><i class="fas fa-gem"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- === Config Menu === -->
+            <div id="configMenu" class="col-12 col-md-6 m-2 invisible">
+                <form>
+                    <div class="row">
+                        <div class="col text-center">
+                            <div class="input-group mb-2 mt-1">
+                                <span class="input-group-text">melee prong setting</span>
+                                <input id="meleeProngSettingFee" type="text" class="form-control text-end" placeholder="5" aria-label="melee prong setting fee" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">melee channel setting</span>
+                                <input id="meleeChannelBezelSettingFee" type="text" class="form-control text-end" placeholder="8" aria-label="melee channel setting fee" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-text">melee flat setting</span>
+                                <input id="meleeFlatSettingFee" type="text" class="form-control text-end" placeholder="10" aria-label="melee flat setting fee" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-2 mt-1">
+                                <span class="input-group-text">rhodium plating</span>
+                                <input id="rhodiumPlatingFee" type="text" class="form-control text-end" placeholder="35" aria-label="melee prong setting fee" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group mb-2">
+                                <span class="input-group-text">3D scan ring</span>
+                                <input id="ringScanFee" type="text" class="form-control text-end" placeholder="100" aria-label="scan ring" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="input-group">
+                                <span class="input-group-text">3D scan stone</span>
+                                <input id="stoneScanFee" type="text" class="form-control text-end" placeholder="70" aria-label="scan stone" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col d-flex align-content-center justify-content-center justify-content-md-end">
+                            <button id="btnCloseConfig" type="button" class="btn btn-outline-danger mt-2 mb-2">Close</button>
+                            <button id="btnResetSettingsConfig" type="button" class="btn btn-outline-dark mt-2 mb-2 mx-3">Reset</button>
+                            <button id="btnUseSettingsConfig" type="button" class="btn btn-dark mt-2 mb-2 btnPrimaryBG">Use Settings</button>
+                        </div>
+                    </div>                                
+                </form>  
+            </div>
+          </div>
+          <!-- === Diamond Melee Pricing Guide === -->
+          <div class="container">  
+            <div id="meleeDiamondPricingGuide" class="row invisible">
+              <h1 class="text-center">Round Diamond Melee Pricing</h1>
+              <div class="row row-cols-1 row-cols-md-2">
+                  <div class="col-md-2"></div>
+                  <div class="col col-md-4 justify-content-center text-center mt-2">
+                      <h2>Stones Option 1</h2>
+                          <label class="form-label">Number Melee Stones</label>
+                          <input id="meleePriceGuideNumMeleeStones1" type="number" name="Number Melee Stones Pricing Guide" class="form-control" placeholder="0"
+                              aria-label="Number Melee Stones One" required>
+                              <label class="form-label">Stone Diameter (mm)</label>
+                          <select id="meleeDiameterSelection1" class="form-select " aria-label="3D Scan Selction">
+                              <option selected value="0">None</option>
+                              <option>0.9</option>
+                              <option>1.0</option>
+                              <option>1.1</option>
+                              <option>1.2</option>
+                              <option>1.3</option>
+                              <option>1.4</option>
+                              <option>1.5</option>
+                              <option>1.7</option>
+                              <option>1.8</option>
+                              <option>2.0</option>
+                              <option>2.2</option>
+                              <option>2.4</option>
+                              <option>2.5</option>
+                              <option>2.7</option>
+                              <option>2.8</option>
+                              <option>3.0</option>
+                              <option>3.2</option>
+                          </select>
+                          <label class="form-label">Melee Quality</label>
+                          <select id="meleeQualitySelection1" class="form-select" aria-label="3D Scan Selction">
+                              <option selected>I1-SI2 Clarity G Color</option>
+                              <option>SI1 Clarity G-H Color</option>
+                              <option>VS Clarity F Color</option>
+                              <option>Lab Grown (CVD VS/ F)</option>
+                          </select>
+                  </div>
+                  <div class="col-md-4 justify-content-center text-center mt-2">
+                      <h2>Stones Option 2</h2>
+                      <label class="form-label">Number Melee Stones</label>
+                      <input id="meleePriceGuideNumMeleeStones2" type="number" name="Number Melee Stones Pricing Guide" class="form-control" placeholder="0"
+                          aria-label="Number Melee Stones One" required>
+                          <label class="form-label">Stone Diameter (mm)</label>
+                      <select id="meleeDiameterSelection2" class="form-select " aria-label="3D Scan Selction">
+                          <option selected value="0">None</option>
+                          <option>0.9</option>
+                          <option>1.0</option>
+                          <option>1.1</option>
+                          <option>1.2</option>
+                          <option>1.3</option>
+                          <option>1.4</option>
+                          <option>1.5</option>
+                          <option>1.7</option>
+                          <option>1.8</option>
+                          <option>2.0</option>
+                          <option>2.2</option>
+                          <option>2.4</option>
+                          <option>2.5</option>
+                          <option>2.7</option>
+                          <option>2.8</option>
+                          <option>3.0</option>
+                          <option>3.2</option>
+                      </select>
+                      <label class="form-label">Melee Quality</label>
+                      <select id="meleeQualitySelection2" class="form-select" aria-label="3D Scan Selction">
+                          <option selected>I1-SI2 Clarity G Color</option>
+                          <option>SI1 Clarity G-H Color</option>
+                          <option>VS Clarity F Color</option>
+                          <option>Lab Grown (CVD VS/ F)</option>
+                      </select>
+                  </div>
+                  <!-- hidden element -->
+                  <div class="col-md-2">
+                      <p id="totalNumberMeleeStonesFromPricingGuide" style="display:none;"></p>
+                  </div>
+                  <!-- hidden element -->
+              </div>
+              <div class="row">
+                  <div class="col d-flex justify-content-center mt-3">
+                      <button id="btnGetMeleePrice" title="Get Price" type="button" class="btn btn-success btn-lg btnPrimaryBG" >Get Price</i></button>
+                  </div>
+              </div>
+              <div class="row mt-2">
+                  <div class="col text-center">
+                      <div class="row">
+                          <h4 id="stoneOption1TotalWeight">Weight: 0.00ctw</h4>
+                      </div>
+                      <div class="row">
+                          <h4 id="stoneOption1TotalPrice">Price: $0.00</h4>
+                      </div>
+                  </div>
+                  <div class="col text-center">
+                      <div class="row">
+                          <h4 id="stoneOption2TotalWeight">Weight: 0.00ctw</h4>
+                      </div>
+                      <div class="row">
+                          <h4 id="stoneOption2TotalPrice">Price: $0.00</h4>
+                      </div>
+                  </div>
+              </div>
+              <div class="row text-center row-cols-1 row-cols-md-3 justify-content-center">
+                  <!-- <div class="col-md-3"></div> -->
+                  <div class="col ms-sm-2">
+                      <h2>Total Weight: </h2><h2 id="totalWeightMeleePricingGuide"></h2>
+                      <h2>Total Price:</h2><h2 id="totalPriceMeleePricingGuide"></h2>
+                  </div>
+                  <!-- <div class="col-md-3"></div> -->
+              </div>
+              <!-- buttons -->
+              <div class="row">
+                  <div class="col d-flex justify-content-center mt-3">
+                      <button id="btnCloseMeleePricing" title="Close Melee Pricing Window" type="button" class="btn btn-outline-danger btn-lg me-3" >Close</i></button>
+                      <button id="btnResetMeleePricingForm" title="Reset Melee Pricing Fields" type="button" class="btn btn-outline-dark btn-lg me-3" >Reset</i></button>
+                      <button id="btnUseMeleePrice" title="Use Melee Price" type="button" class="btn btn-dark btn-lg btnPrimaryBG" >Use Price</i></button>                      
+                  </div>
+              </div>
+            </div>
+          </div>
+          <hr class="bg-danger border-2 border-top border-primary">
+          <!-- === Pricing Section === -->
+          <div class="container">
+            <h1 class="text-center mb-3">Price Estimator</h1>
+            <form action="#">
+                <div class="row mb-1">
+                    <div class="col">
+                        <label class="form-label">Metal Selection</label>
+                        <select id="metalSelection" class="form-select" aria-label="Metal Selection">
+                            <option value="10k White Gold">10k White Gold</option>
+                            <option value="10k Yellow Gold">10k Yellow Gold</option>
+                            <option value="10k Rose Gold">10k Rose Gold</option>
+                            <option selected value="14k White Gold">14k White Gold</option>
+                            <option value="14k Yellow Gold">14k Yellow Gold</option>
+                            <option value="14k Rose Gold">14k Rose Gold</option>
+                            <option value="18k White Gold">18k White Gold</option>
+                            <option value="18k Yellow Gold">18k Yellow Gold</option>
+                            <option value="18k Rose Gold">18k Rose Gold</option>
+                            <option value="Platinum">Platinum</option>
+                            <option value="Sterling Silver">Sterling Silver</option>
+                            </select>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Metal Spot Price</label>
+                        <input id="metalSpotPrice" type="number" name="spotPrice" class="form-control" placeholder="1850"
+                            aria-label="metal spot price" required>
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col">
+                        <label class="form-label">Metal Weight</label>
+                        <input id="metalWeight" type="number" name="metal weight" class="form-control" placeholder="5.0"
+                            aria-label="metal weight" required>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Num of Pieces</label>
+                        <input id="numberOfPieces" type="number" name="numberOfPieces" title="Number of pieces" class="form-control" placeholder="1"
+                            aria-label="number of pieces">
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col">
+                        <label class="form-label">Num melee stones</label>
+                        <input id="numberMeleeStones" type="number" name="melee stone count" title="Number of melee stones" class="form-control" placeholder="0"
+                            aria-label="melee stone count" required>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Melee Setting Style</label>
+                        <select id="meleeSettingStyle" class="form-select" title="Melee setting style" aria-label="Melee Setting Style">
+                            <option selected value="prong">prong</option>
+                            <option value="channel/bezel/bar">channel/bezel/bar</option>
+                            <option value="flat">flat</option>
+                            </select>
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col">
+                        <label class="form-label">Center Weight</label>
+                        <input id="centerStoneWeight" type="number" name="centerWeight" title="Carat weight of center stone" class="form-control" placeholder="0.00"
+                            aria-label="Center Weight" required>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Num Large Accents</label>
+                        <input id="numberLargeAccents" type="number" name="numberOfAccents" title="Number of Large Accent Stones" class="form-control" placeholder="0"
+                            aria-label="number of accents">
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col">
+                        <label class="form-label">Assembly Fees</label>
+                        <input id="assemblyFees" type="number" name="assemblyFees" class="form-control" placeholder="0"
+                            aria-label="assembly fees" required>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Accent Carat Each</label>
+                        <input id="accentsWeightEach" type="number" name="accentWeightEach" title="Carat weight of each large accent stone" class="form-control" placeholder="0.00"
+                            aria-label="accent stones weight">
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col">
+                        <label class="form-label">Customer Stones</label>
+                        <select id="customerStonesFee" class="form-select" title="Are customer stones being used" aria-label="Default select example">
+                            <option selected value="0">No</option>
+                            <option value="30">Yes</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Parts Cost</label>
+                        <input id="partsCost" type="number" name="partsCost" class="form-control" placeholder="0"
+                            aria-label="parts cost">
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col">
+                        <label class="form-label">Design Type</label>
+                        <select id="designType" class="form-select" aria-label="Default select example">
+                            <option value="0">No Charge</option>
+                            <option selected value="325">$325 Regular Ring</option>
+                            <option value="450"> $450 Intricate Ring</option>
+                            <option value="600"> $600 Complex Ring</option>
+                            <option value="125"> $125 Regular Band</option>
+                            <option value="300"> $300 Intricate Band</option>
+                            <option value="200"> $200 Shadow Band</option>
+                            <option value="200"> $200 Regular Pendant</option>
+                            <option value="325"> $325 Intricate Pendant</option>
+                            <option value="400"> $400 Complex Pendant</option>
+                            <option value="200"> $200 Regular Earrings</option>
+                            <option value="325"> $325 Intricate Earrings</option>
+                            <option value="200"> $200 Imprint Band</option>
+                            <option value="45"> $45 Mold</option>
+                        </select>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">3D Scan</label>
+                        <select id="scanSelection" class="form-select" title="Does the project require a 3D scan" aria-label="3D Scan Selction">
+                            <option selected value="0">None</option>
+                            <option>Scan Ring</option>
+                            <option>Scan Stone</option>
+                            <option>Scan Ring & Stone</option>
+                        </select>
+                    </div>
+                </div>
+                <hr class="bg-danger border-3 border-top border-primary">
+                
+                <!-- === Stones Section === -->
+                <div class="row mb-1">
+                    <div class="col">
+                        <label class="form-label">Melee Price</label>
+                        <input id="meleePrice" type="number" name="meleePrice" class="form-control" placeholder="0"
+                            aria-label="melee stones price" required>
+                    </div>
+                    <div class="col">
+                        <label class="form-label">Accents Price</label>
+                        <input id="accentsPrice" type="number" name="accentsPrice" class="form-control" placeholder="0"
+                            aria-label="accent stones price">
+                    </div>
+                </div>
+                <div class="row mb-1">
+                    <div class="col">
+                        <label class="form-label">Center Price</label>
+                        <input id="centerPrice" type="number" name="centerPrice" class="form-control" placeholder="0"
+                            aria-label="center stone price" required>
+                    </div>
+                    <div class="col">
+                        <div class="d-flex justify-content-center mt-3">
+                            <button id="btnQuote" type="button" class="btn btn-dark btn-lg btnPrimaryBG justify-content-end">Get Quote</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <hr class="bg-danger border-3 border-top border-primary">
+            <!-- === Display Results === -->
+            <div class="alert alert-danger fade show invisible" id="alert" role="alert">
+                <h4 id="alertHeading" class="alert-heading">
+                    <div class="row row-cols-1 row-cols-md-2 mb-2">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <div class=" row ">
+                                <div class="d-flex col justify-content-end">
+                                    <label for="mountTotal" class="col-form-label">Mount Total</label>
+                                </div>
+                                <div class="col">
+                                    <h3 id="mountTotal" class="col-form-label resultsText">548</h3>
+                                </div>
+                                </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="d-flex col justify-content-end">
+                                    <label for="stonesTotal" class="col-form-label">Stones Total</label>
+                                </div>
+                                <div class="col">
+                                    <h3 id="stonesTotal" class="col-form-label">548</h3>
+                                </div>
+                                </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="d-flex col justify-content-end">
+                                    <label for="quoteTotal" class="col-form-label">Quote Total</label>
+                                </div>
+                                <div class="col">
+                                    <h3 id="quoteTotal" class="col-form-label resultsText">548</h3>
+                                </div>
+                                </div>
+                        </div>
+                        <div class="col-md-3"></div>
+                    </div>
+                </h4>
+                <hr>
+                <p class="mb-0" id="message">
+                    <!-- Insert message with javascript here -->
+                </p>
+                <div class="row">
+                    <div class="d-flex col justify-content-center">
+                        <button id="btnReset" type="button" class="btn btn-outline-dark btn-lg mt-2">Reset</button> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous">
+    </script>
+    <script src="/js/site.js"></script>
+</body>
+
+</html>
